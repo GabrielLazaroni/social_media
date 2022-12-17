@@ -33,7 +33,7 @@ def like_post(request):
         like_filter.delete()
         post.no_of_likes = post.no_of_likes - 1
         post.save()
-        return redirect('/')
+        return redirect('/') 
         
 @login_required(login_url='signin')
 def upload(request):
