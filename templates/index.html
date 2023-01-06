@@ -23,10 +23,10 @@
         <div class="header_inner">
             <div class="left-side">
                 <!-- Logo -->
-                <div id="logo" class=" uk-hidden@s">
-                    <a href="home.html">
+                <div>
+                    <a href="/index">
                         <b>
-                            <h1 style="text-transform: uppercase;">Flash</h1>
+                            <h1 style="text-transform: uppercase; margin-right: 1rem;">Flash</h1>
                         </b>
                     </a>
                 </div>
@@ -80,7 +80,7 @@
                                     <br>
                                     <textarea class="rounded soft-warning small" name="caption" placeholder="caption..."></textarea>
                                     <br>
-                                    <button class="p-2 px-4 rounded bg-black text-white" type="submit">Upload</button>
+                                    <button class="p-2 px-4 rounded bg-black text-white" type="submit"><a href="/index"> Upload</a></button>
                                 </div>
 
                                 <!-- <a href="#" class="uk-text-muted mt-3 uk-link" uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
@@ -180,6 +180,7 @@
                 </a>
                 <div uk-drop="mode: click;offset:9" class="header_dropdown  border-t">
                     <ul>
+                        <li><a href="/profile/{{user_profile.user}}"> Profile</a></li>
                         <li><a href="/settings"> Account setting </a> </li>
                         <li><a href="logout"> Log Out</a></li>
                     </ul>
@@ -211,7 +212,7 @@
                                     <img src="{{user_profile.profileimg.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                 </div>
                             </a>
-                            <span class="block capitalize font-semibold "> <a href=""><strong>@{{post.user}}</strong> </a></span>
+                            <span class="block capitalize font-semibold "> <a href="/profile/{{post.user}}"><strong>@{{post.user}}</strong> </a></span>
                         </div>
                         <div>
                             <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i> </a>
@@ -324,7 +325,7 @@
                         </div> -->
 
                         <p>
-                            <a href="#"> <strong>{{post.user}}</strong></a> {{post.caption}}
+                            <a href="/profile/{{post.user}}"> <strong>{{post.user}}</strong></a> {{post.caption}}
                         </p>
 
                         <!-- <div class="border-t pt-4 space-y-4 ">
@@ -361,10 +362,10 @@
                 {% endfor %}
 
                 <!-- Load more-->
-                <div class="flex justify-center mt-6" id="toggle" uk-toggle="target: #toggle ;animation: uk-animation-fade">
+                <!-- <div class="flex justify-center mt-6" id="toggle" uk-toggle="target: #toggle ;animation: uk-animation-fade">
                     <a href="#" class="bg-white  font-semibold my-3 px-6 py-2 rounded-full shadow-md  ">
                         Load more ...</a>
-                </div>
+                </div> -->
 
             </div>
             <!-- right sidebar-->
